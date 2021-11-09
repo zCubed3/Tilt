@@ -7,8 +7,15 @@ class Renderer {
 public:
     Renderer(RI_Impl* ri);
 
-    // RenderInterface
-    RI_Impl* ri;
+    void Start(); // Initializes the API, creates a window, etc...
+
+    void Present(); // Draws the final image
+
+    //
+    // Members
+    //
+    RI_Impl* ri;     // Interface we use to talk to the graphics API
+    GLFWwindow* window;
 };
 
 #endif

@@ -38,6 +38,17 @@ void RI_OpenGL4::setup_AfterWindowCreate(GLFWwindow *window) {
 }
 
 //
+// Drawing
+//
+void RI_OpenGL4::draw_Clear() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+
+void RI_OpenGL4::draw_Present(GLFWwindow *window) {
+    glfwSwapBuffers(window);
+}
+
+//
 // Features
 //
 void RI_OpenGL4::feature_SetCullMode(CullMode mode) {

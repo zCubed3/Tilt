@@ -6,7 +6,18 @@
 //
 
 //
-// Preprocessors to identify the compiler
+// Platform Identification
+//
+#if defined(__linux__)
+#define OS_ID "Linux"
+#elif defined(__FreeBSD__) // IDK, but why not support our friends using BSD?
+#define OS_ID "FreeBSD"
+#elif defined(_WIN32)
+#define OS_ID "Windows"
+#endif
+
+//
+// Compiler Identification
 //
 
 // https://stackoverflow.com/questions/28166565/detect-gcc-as-opposed-to-msvc-clang-with-macro

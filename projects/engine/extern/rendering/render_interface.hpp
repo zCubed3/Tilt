@@ -28,6 +28,12 @@ public:
     virtual void setup_AfterWindowCreate(GLFWwindow* window) = 0; // Used for setting up OpenGL contexts
 
     //
+    // Drawing
+    //
+    virtual void draw_Clear() = 0;
+    virtual void draw_Present(GLFWwindow *window) = 0; // Presents the buffer to the screen
+
+    //
     // Features
     //
 

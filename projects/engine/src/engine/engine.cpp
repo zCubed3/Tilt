@@ -8,9 +8,9 @@
 Engine *Engine::instance = nullptr;
 
 //
-// Engine initializer, this is the entire backbone of the engine setup
+// Engine create
 //
-void Engine::Initialize() {
+void Engine::Create() {
     if (Engine::instance)
         throw std::runtime_error("An engine instance already exists!");
 
@@ -18,6 +18,25 @@ void Engine::Initialize() {
 }
 
 //
-// TODO: Actually give this constructor purpose
+// Engine start
+//
+#include <rendering/renderer.hpp>
+#include <GLFW/glfw3.h>
+
+void Engine::Start() {
+    if (!renderer)
+        throw std::runtime_error("No valid renderer was given to the engine!");
+
+    renderer->Start();
+
+    while (true) {
+        glfwPollEvents();
+
+        renderer->Present();
+    }
+}
+
+//
+// TODO: Actually give this constructor purpose?
 //
 Engine::Engine() = default;

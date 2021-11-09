@@ -18,6 +18,10 @@ public:
     void setup_BeforeWindowCreate() override;
     void setup_AfterWindowCreate(GLFWwindow* window) override;
 
+    // Drawing
+    void draw_Clear() override;
+    void draw_Present(GLFWwindow *window) override;
+
     //
     // Features
     //
