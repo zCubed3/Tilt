@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(Manta)
+project(Tilt)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -20,7 +20,7 @@ set(CMAKE_SHARED_LIBRARY_PREFIX "")
 set(ENGINE_DIR ${PROJECTS_DIR}/engine)
 set(DEPENDS_DIR ${CMAKE_SOURCE_DIR}/dependencies)
 
-message("Building Manta as ${CMAKE_BUILD_TYPE}")
+message("Building Tilt as ${CMAKE_BUILD_TYPE}")
 
 # idk why CMake doesn't do this automatically
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")

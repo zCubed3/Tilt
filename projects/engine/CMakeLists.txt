@@ -1,18 +1,6 @@
-set(SOURCES
-        "${DEPENDS_DIR}/imgui/imgui.cpp"
-        "${DEPENDS_DIR}/imgui/imgui_demo.cpp"
-        "${DEPENDS_DIR}/imgui/imgui_internal.h"
-        "${DEPENDS_DIR}/imgui/imgui_draw.cpp"
-        "${DEPENDS_DIR}/imgui/imgui_tables.cpp"
-        "${DEPENDS_DIR}/imgui/imgui_widgets.cpp"
-        "${DEPENDS_DIR}/imgui/backends/imgui_impl_glfw.cpp"
-        "${DEPENDS_DIR}/imgui/backends/imgui_impl_opengl3.cpp"
-        "${DEPENDS_DIR}/imgui/misc/cpp/imgui_stdlib.cpp"
-)
-
 set(INCLUDE_DIRS
         "${DEPENDS_DIR}"
-        "${ENGINE_DIR}/src"
+        "${ENGINE_DIR}/extern"
         )
 
 if (DEFINED WIN32)
@@ -39,11 +27,11 @@ set(SOURCE_EXTENSIONS
 
 get_sources(${SOURCE_DIRS} ${SOURCE_EXTENSIONS} GLOB_SOURCES)
 
-add_executable(MantaEngine ${GLOB_SOURCES})
-target_include_directories(MantaEngine PUBLIC ${INCLUDE_DIRS})
-target_link_libraries(MantaEngine PUBLIC ${LIBRARIES})
+add_executable(TiltEngine ${GLOB_SOURCES})
+target_include_directories(TiltEngine PUBLIC ${INCLUDE_DIRS})
+target_link_libraries(TiltEngine PUBLIC ${LIBRARIES})
 
-set_target_properties(MantaEngine PROPERTIES
-        OUTPUT_NAME "Manta"
+set_target_properties(TiltEngine PROPERTIES
+        OUTPUT_NAME "Tilt"
         )
 
