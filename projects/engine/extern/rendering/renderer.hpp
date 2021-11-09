@@ -9,6 +9,22 @@ public:
 
     void Start(); // Initializes the API, creates a window, etc...
 
+    //
+    // Rendering
+    //
+
+    // Clears the image buffer and sets up the scene to be rendered
+    void BeginRender();
+
+    // Finalizes the render and cleans up garbage
+    void EndRender();
+
+    // Begins a new ImGui frame
+    void BeginImGui();
+
+    // Ends the ImGui frame
+    void EndImGui();
+
     void Present(); // Draws the final image
 
     //

@@ -25,9 +25,18 @@ set(SOURCE_EXTENSIONS
         "*.cpp"
 )
 
+set(ADDITIONAL_SOURCES
+        "${DEPENDS_DIR}/imgui/imgui.cpp"
+        "${DEPENDS_DIR}/imgui/imgui_draw.cpp"
+        "${DEPENDS_DIR}/imgui/imgui_tables.cpp"
+        "${DEPENDS_DIR}/imgui/imgui_widgets.cpp"
+        "${DEPENDS_DIR}/imgui/backends/imgui_impl_glfw.cpp"
+        "${DEPENDS_DIR}/imgui/backends/imgui_impl_opengl3.cpp"
+)
+
 get_sources(${SOURCE_DIRS} ${SOURCE_EXTENSIONS} GLOB_SOURCES)
 
-add_executable(TiltEngine ${GLOB_SOURCES})
+add_executable(TiltEngine ${GLOB_SOURCES} ${ADDITIONAL_SOURCES})
 target_include_directories(TiltEngine PUBLIC ${INCLUDE_DIRS})
 target_link_libraries(TiltEngine PUBLIC ${LIBRARIES})
 

@@ -23,14 +23,36 @@ void Engine::Create() {
 #include <rendering/renderer.hpp>
 #include <GLFW/glfw3.h>
 
+#include <imgui/imgui.h>
+
 void Engine::Start() {
     if (!renderer)
         throw std::runtime_error("No valid renderer was given to the engine!");
 
+
+    ImGui::CreateContext();
     renderer->Start();
 
-    while (true) {
+    ImGuiStyle &style = ImGui::GetStyle();
+    ImGui::StyleColorsDark(&style);
+
+    ImGuiIO &imguiIO = ImGui::GetIO();
+    imguiIO.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+
+    while (!glfwWindowShouldClose(renderer->window)) {
         glfwPollEvents();
+
+        renderer->BeginRender();
+
+        renderer->EndRender();
+
+        renderer->BeginImGui();
+
+        ImGui::Begin("Test");
+
+        ImGui::End();
+
+        renderer->EndImGui();
 
         renderer->Present();
     }

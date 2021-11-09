@@ -23,6 +23,13 @@ public:
     void draw_Present(GLFWwindow *window) override;
 
     //
+    // ImGui
+    //
+    void imgui_Setup(GLFWwindow *window) override;
+    void imgui_Begin() override;
+    void imgui_End() override;
+
+    //
     // Features
     //
     void feature_SetCullMode(CullMode mode) override;

@@ -49,6 +49,29 @@ void RI_OpenGL4::draw_Present(GLFWwindow *window) {
 }
 
 //
+// ImGui
+//
+#include <imgui/imgui.h>
+#include <imgui/backends/imgui_impl_opengl3.h>
+#include <imgui/backends/imgui_impl_glfw.h>
+
+void RI_OpenGL4::imgui_Setup(GLFWwindow *window) {
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 150");
+}
+
+void RI_OpenGL4::imgui_Begin() {
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+}
+
+void RI_OpenGL4::imgui_End() {
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+}
+
+//
 // Features
 //
 void RI_OpenGL4::feature_SetCullMode(CullMode mode) {

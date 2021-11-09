@@ -24,9 +24,31 @@ void Renderer::Start() {
     window = glfwCreateWindow(800, 600, "Tilt", nullptr, nullptr);
 
     ri->setup_AfterWindowCreate(window);
+    ri->imgui_Setup(window);
+}
+
+//
+// Rendering
+//
+void Renderer::BeginRender() {
+    ri->draw_Clear();
+}
+
+void Renderer::EndRender() {
+
+}
+
+//
+// ImGui rendering
+//
+void Renderer::BeginImGui() {
+    ri->imgui_Begin();
+}
+
+void Renderer::EndImGui() {
+    ri->imgui_End();
 }
 
 void Renderer::Present() {
-    ri->draw_Clear();
     ri->draw_Present(window);
 }

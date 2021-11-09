@@ -34,6 +34,13 @@ public:
     virtual void draw_Present(GLFWwindow *window) = 0; // Presents the buffer to the screen
 
     //
+    // ImGui
+    //
+    virtual void imgui_Setup(GLFWwindow *window) = 0;
+    virtual void imgui_Begin() = 0;
+    virtual void imgui_End() = 0;
+
+    //
     // Features
     //
 
