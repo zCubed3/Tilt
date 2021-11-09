@@ -25,6 +25,8 @@ The Tilt engine is a one man project to learn more about game engine creation an
 ## Platforms with unknown compatibility
 ### Compatibility with these platforms might be possible by accident and is not purposeful
 
+#### You wouldn't be gaming on either of these platforms in the first place!
+
 | OS            | Compilers     | Architectures  | Build |
 | :-----------  |:-------------:| :-----:        | :---: |
 | <img src="https://www.openbsd.org/art/puffy/puf800X689.gif" width="32"/> OpenBSD | GNU GCC, LLVM Clang | amd64 | Unknown |
