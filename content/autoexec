@@ -1,4 +1,4 @@
-#Initializes commonly used engine cvars and cfuncs
+# Initializes commonly used engine cvars and cfuncs
 
 +gamename Manta
 
